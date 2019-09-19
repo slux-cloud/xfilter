@@ -19,7 +19,7 @@ in mongo collection with two documents:
    foo : 'bar2'
 }
 
-the expression 'foo'$eq"bar"
+the expression 'foo'$eq:"bar"
 
 will filter only the first document
 
@@ -47,11 +47,28 @@ the property of object is always quoted
 ## Filter Operators
 
 ###  equals $eq 
-  
-  means SQL =  ex: for 
-
+  means SQL =  ex: 'foo'$eq"bar"
 ###  not equals $ne
-  means SQL <>
+  means SQL <> ex: 'foo'$ne"bar"
+### contains $cts
+  means SQL LIKE '%%' ex: 'foo'$cts"bar" 
+### greater equals than $gte
+  means SQL >= ex: 'foo'$gte5
+### greater than $gt
+   means SQL > ex: 'foo'$gt4
+### less equals than $lte
+   means SQL <= ex: 'foo'$lte3
+### less than $lt
+   means SQL < ex: 'foo'$lt2  
+### betwwen $btw
+    means  SQL BETWEEN ex: 'foo'$btw2:3
+### in $in 
+    means SQL IN ex: 'foo'$in[5, 4, 3, 2]
+### not in $nin
+    means SQL NOT IN ex: 'foo'$nin[1,3,0,6]
 
-### contains
-
+## LOGICAL CONNECTORS
+   AND - OR 
+   
+## PRECENDENCE
+    ( )
